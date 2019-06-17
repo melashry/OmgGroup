@@ -13,4 +13,8 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="omg_tv">Omg /tv</string>
+    <string name="omg_radio">Omg Radio</string>
+    <string name="about_us">About Us</string>
+    <string name="Advertise_with_us">Advertise with Us</string>
 </resources>
