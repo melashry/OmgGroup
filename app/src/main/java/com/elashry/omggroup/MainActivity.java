@@ -1,5 +1,7 @@
 package com.elashry.omggroup;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -50,12 +52,18 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_tv) {
-            // Handle the camera action
+
         } else if (id == R.id.nav_radio) {
 
         } else if (id == R.id.nav_about) {
+            Intent intent=new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("http://omgchannel.net/OMG/About-Us"));
+            startActivity(intent);
 
         } else if (id == R.id.nav_advertise) {
+            Intent intent=new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("http://omgchannel.net/OMG?journal_blog_post_id=75"));
+            startActivity(intent);
 
         }
 
