@@ -36,14 +36,33 @@
         android:src="@drawable/home_imgbtn_bg"
         />
     <LinearLayout
-        android:layout_marginTop="30px"
+        android:layout_marginTop="50px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:gravity="center"
         >
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:layout_marginLeft="20px"
+            android:src="@drawable/share"
+            />
+        <ImageButton
+            android:layout_width="200px"
+            android:layout_height="160px"
+            android:layout_marginLeft="20px"
+            android:src="@drawable/youtube"
+            />
+        <ImageButton
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:layout_marginLeft="20px"
+            android:src="@drawable/linkedin"
+            />
+        <ImageButton
+            android:layout_width="200px"
+            android:layout_height="200px"
             android:layout_marginLeft="20px"
             android:src="@drawable/facebook"
             />
