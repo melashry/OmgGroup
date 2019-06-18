@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +9,7 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
-    android:background="#000"
+    android:background="@drawable/back"
     tools:showIn="@layout/app_bar_main">
 
   <ImageView
@@ -18,18 +20,35 @@
 
     <ImageButton
         android:layout_width="match_parent"
-        android:layout_height="300px"
+        android:layout_height="500px"
         android:id="@+id/imgbtn_tv"
         android:layout_margin="20px"
-        android:background="@drawable/home_imgbtn_bg"
-        android:src="@mipmap/ic_launcher"
-      />
+        android:background="@drawable/TVchannel"
+        android:src="@drawable/home_imgbtn_bg"
+
+        />
     <ImageButton
         android:layout_width="match_parent"
-        android:layout_height="300px"
+        android:layout_height="500px"
         android:id="@+id/imgbtn_radio"
         android:layout_margin="20px"
-        android:background="@drawable/home_imgbtn_bg"
-        android:src="@mipmap/ic_launcher"
+        android:background="@drawable/radio"
+        android:src="@drawable/home_imgbtn_bg"
         />
+    <LinearLayout
+        android:layout_marginTop="30px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:src="@drawable/facebook"
+            />
+    </LinearLayout>
+
 </LinearLayout>
+
+</ScrollView>
