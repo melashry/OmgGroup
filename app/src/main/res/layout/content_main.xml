@@ -14,59 +14,59 @@
 
   <ImageView
       android:layout_width="match_parent"
-      android:layout_height="300px"
-      android:src="@drawable/ic_launcher_foreground"
-      android:layout_margin="10px"/>
+      android:layout_height="100dp"
+      android:src="@drawable/logo"
+      android:layout_margin="10dp"/>
 
     <ImageButton
         android:layout_width="match_parent"
-        android:layout_height="500px"
+        android:layout_height="150dp"
         android:id="@+id/imgbtn_tv"
-        android:layout_margin="20px"
-        android:background="@drawable/TVchannel"
+        android:layout_margin="10dp"
+        android:background="@drawable/tvchannel"
         android:src="@drawable/home_imgbtn_bg"
 
         />
     <ImageButton
         android:layout_width="match_parent"
-        android:layout_height="500px"
+        android:layout_height="150dp"
         android:id="@+id/imgbtn_radio"
-        android:layout_margin="20px"
+        android:layout_margin="10dp"
         android:background="@drawable/radio"
         android:src="@drawable/home_imgbtn_bg"
         />
     <LinearLayout
-        android:layout_marginTop="50px"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
         >
         <ImageButton
-            android:layout_width="200px"
-            android:layout_height="200px"
-            android:layout_marginLeft="20px"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
             android:id="@+id/share"
             android:src="@drawable/share"
             />
         <ImageButton
-            android:layout_width="200px"
-            android:layout_height="160px"
-            android:layout_marginLeft="20px"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="15dp"
             android:id="@+id/youtube"
             android:src="@drawable/youtube"
             />
         <ImageButton
-            android:layout_width="200px"
-            android:layout_height="200px"
-            android:layout_marginLeft="20px"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="15dp"
             android:id="@+id/linkedin"
             android:src="@drawable/linkedin"
             />
         <ImageButton
-            android:layout_width="200px"
-            android:layout_height="200px"
-            android:layout_marginLeft="20px"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="15dp"
             android:id="@+id/facebook"
             android:src="@drawable/facebook"
             />

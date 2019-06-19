@@ -26,7 +26,8 @@ import static com.elashry.omggroup.Api.BASE_URL;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    ImageButton facebook,share,youtube,linkedin;
+    ImageButton facebook,share,youtube,linkedin,tv,radio;
+    String Tvurl,AudioURL;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +37,26 @@ public class MainActivity extends AppCompatActivity
 
         initView();
 
-        getData();
+
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getData();
+                Intent intent = new Intent(MainActivity.this,TvActivity.class);
+                intent.putExtra("url",Tvurl);
+                startActivity(intent);
+
+            }
+        });
+        radio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getData();
+                Intent intent = new Intent(MainActivity.this,AudioActivity.class);
+                intent.putExtra("url",AudioURL);
+                startActivity(intent);
+            }
+        });
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,6 +81,22 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plain");
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Omg Group");
+                    String shareMessage= "\nLet me recommend you this application\n\n";
+                    shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=com.elashry.omggroup" + BuildConfig.APPLICATION_ID +"\n\n";
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+                    startActivity(Intent.createChooser(shareIntent, "choose one"));
+                } catch(Exception e) {
+                    //e.toString();
+                }
+            }
+        });
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -81,6 +117,8 @@ public class MainActivity extends AppCompatActivity
 
                 if (response.isSuccessful())
                 {
+                 Tvurl=   response.body().getTv_url();
+                 AudioURL=   response.body().getRadio_url();
 
                 }
             }
@@ -96,6 +134,8 @@ public class MainActivity extends AppCompatActivity
         share=findViewById(R.id.share);
         youtube=findViewById(R.id.youtube);
         linkedin=findViewById(R.id.linkedin);
+        tv=findViewById(R.id.imgbtn_tv);
+        radio=findViewById(R.id.imgbtn_radio);
 
     }
 
