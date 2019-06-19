@@ -46,24 +46,28 @@
             android:layout_width="200px"
             android:layout_height="200px"
             android:layout_marginLeft="20px"
+            android:id="@+id/share"
             android:src="@drawable/share"
             />
         <ImageButton
             android:layout_width="200px"
             android:layout_height="160px"
             android:layout_marginLeft="20px"
+            android:id="@+id/youtube"
             android:src="@drawable/youtube"
             />
         <ImageButton
             android:layout_width="200px"
             android:layout_height="200px"
             android:layout_marginLeft="20px"
+            android:id="@+id/linkedin"
             android:src="@drawable/linkedin"
             />
         <ImageButton
             android:layout_width="200px"
             android:layout_height="200px"
             android:layout_marginLeft="20px"
+            android:id="@+id/facebook"
             android:src="@drawable/facebook"
             />
     </LinearLayout>

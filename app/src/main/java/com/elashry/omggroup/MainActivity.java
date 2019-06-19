@@ -15,16 +15,52 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.ImageButton;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+
+import static com.elashry.omggroup.Api.BASE_URL;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    ImageButton facebook,share,youtube,linkedin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        initView();
+
+        getData();
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://www.facebook.com/Omg-Channel-1687614811490132/"));
+                startActivity(intent);
+            }
+        });
+        youtube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://m.youtube.com/channel/UCqc1YeG_iEwmrXVe4wPUhTg"));
+                startActivity(intent);
+            }
+        });
+        linkedin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://www.linkedin.com/company/omg-channel"));
+                startActivity(intent);
+            }
+        });
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -34,6 +70,35 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
     }
+    private void getData()
+    {
+        Retrofit retrofit = Api.getClient(BASE_URL);
+        Services services = retrofit.create(Services.class);
+        Call<responseModel> call = services.getData();
+        call.enqueue(new Callback<responseModel>() {
+            @Override
+            public void onResponse(Call<responseModel> call, Response<responseModel> response) {
+
+                if (response.isSuccessful())
+                {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<responseModel> call, Throwable t) {
+
+            }
+        });
+    }
+    private void initView() {
+        facebook=findViewById(R.id.facebook);
+        share=findViewById(R.id.share);
+        youtube=findViewById(R.id.youtube);
+        linkedin=findViewById(R.id.linkedin);
+
+    }
+
 
     @Override
     public void onBackPressed() {
